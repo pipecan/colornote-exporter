@@ -7,6 +7,6 @@ This repository is intentionally small. Keep all logic within `main.py`.
 - `uv sync`: install deps.
 - `uv run python main.py <file>`: decrypt a backup file.
 - `uv run python main.py -p <password> <file>`: decrypt a backup file with custom password.
-- `uv run ruff format`: run formatter.
-- `uv run ruff check`: run formatter.
+- `uv run ruff format`: format code.
+- `uv run ruff check`: lint code.
 - `uv run pytest`: run tests.
