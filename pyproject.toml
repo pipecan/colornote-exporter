@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "pycryptodome",
+    "readme-md>=2018.11.23",
 ]
 
 [dependency-groups]
@@ -13,3 +14,6 @@ dev = [
     "pytest>=9.0.2",
     "ruff>=0.15.6",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
