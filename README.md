@@ -1,35 +1,32 @@
 # ColorNote Exporter
 
-Decrypt ColorNote backups and print the decoded records as JSON.
+Export ColorNote backups as JSON.
 
 Decryption logic is adapted from [fcoiffie/decode-ColorNote](https://github.com/fcoiffie/decode-ColorNote).
 
 ## Run with uv
 
-1. Create/sync the environment:
-```
+1. Install dependencies:
+```bash
 uv sync
 ```
 
-2. Run the decoder on a single backup file:
-```
-uv run python main.py <filename>
-```
+2. Export backup file to `output.json`:
+```bash
+# no password
+uv run python main.py <filename> > output.json
 
-3. Optional: pass a backup password (default: `0000`):
-```
-uv run python main.py -p <password> <filename>
+# custom password
+uv run python main.py -p <password> <filename> > output.json
 ```
 
 ## Example
-
-Example input:
 
 ```bash
 uv run python main.py -p hunter2 examples/1773619940425-MANUAL.backup
 ```
 
-Example output:
+Output:
 
 ```json
 [
@@ -48,7 +45,7 @@ Example output:
 ]
 ```
 
-For the full output shape, see the generated JSON files in [`examples/`](./examples/).
+For the full output shape, see the generated JSON file in [`examples/`](./examples/).
 
 ## How It Works
 
@@ -85,4 +82,5 @@ backup file
 ## Roadmap
 
 - [ ] Filters (--archived, --todos, --text, --color, --before, --after, --type)
-- [ ] Formats (--markdown, --html, --jsonl, --txt)
+- [ ] Formats (--markdown, --html, --jsonl, --txt, --csv)
+- [ ] Export each note as a separate file
